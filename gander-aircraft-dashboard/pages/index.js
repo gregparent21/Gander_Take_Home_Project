@@ -112,11 +112,11 @@ export default function Home() {
         ))}
       </div>
 
-      {/* Reset + Add Buttons Below the Grid */}
+      {/* Reset & Add Buttons*/}
       <div className="mt-12 flex justify-center gap-4">
         {/* Add Aircraft Button */}
         <button
-          className="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600 transition"
+          className="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600"
           onClick={() => {
             const tailNumber = prompt("Enter Tail Number:");
             const model = prompt("Enter Model:");
@@ -137,7 +137,6 @@ export default function Home() {
               location: { lat, lng },
             };
 
-            // Check for duplicate tail number
             const exists = aircraft.some((a) => a.tailNumber === tailNumber);
             if (exists) {
               alert("Dulplicate Tail Number");
